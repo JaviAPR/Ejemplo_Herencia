@@ -77,6 +77,15 @@ class Empleado extends Persona{
     toString(){
         return this._idEmpleado+': '+this.datosCompletos();
     }
-
-
 }
+
+let persona1 = new Persona('Javier','Pancha','22');
+let empleado1 = new Empleado('Carlos','Ramirez','21','1800');
+let persona2 = new Persona('Pedro','Rubiano','23');
+let persona3 = new Persona('Daniela','Velandia','22');
+let empleado2 = new Empleado('Paco','Pascal','26','2000');
+console.log(persona1.toString())
+console.log(empleado1.toString())
+console.log(persona2.toString())
+console.log(empleado2.toString())
+console.log(persona3.toString())
