@@ -57,6 +57,26 @@ class Empleado extends Persona{
         this._sueldo = sueldo;
         this._idEmpleado = Persona.contadorPersonas;
     }
-    
+
+    //Metodos
+    get idEmpleado(){
+        return this._idEmpleado;
+    }
+
+    get sueldo(){
+        return this._sueldo;
+    }
+    set sueldo(sueldo){
+        this._sueldo = sueldo;
+    }
+
+    datosCompletos(){
+        return super.datosCompletos()+' '+this._sueldo;
+    }
+
+    toString(){
+        return this._idEmpleado+': '+this.datosCompletos();
+    }
+
 
 }
