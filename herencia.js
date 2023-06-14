@@ -8,7 +8,7 @@ class Persona{
         this._nombre = nombre;
         this._apellido = apellido;
         this._edad = edad;
-        this._idPersona = ++contadorPersonas;
+        this._idPersona = ++Persona.contadorPersonas;
     }
 
     //metodos 
@@ -43,5 +43,9 @@ class Persona{
         return this._idPersona +' '+ this._nombre +' '+ this._apellido +' '+ this._edad
     }
 
+
+}
+
+class Empleado extends Persona{
 
 }
