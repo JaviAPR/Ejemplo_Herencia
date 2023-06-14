@@ -78,14 +78,42 @@ class Empleado extends Persona{
         return this._idEmpleado+': '+this.datosCompletos();
     }
 }
+const fecha = new Date();
+
+class Cliente extends Persona{
+
+    constructor(nombre,apellido,edad){
+        super(nombre,apellido,edad)
+        this._idCliente = Persona.contadorPersonas;
+        this._fechaRegistro = (fecha.getDate()+'/'+(fecha.getMonth()+1)+'/'+fecha.getFullYear());
+        
+    }
+
+    get idCliente(){
+        return this._idCliente;
+    }
+    get fechaRegistro(){
+        return this._fechaRegistro;
+    }
+    set fechaRegistro(date){
+        this._fechaRegistro = date;
+    }
+    toString(){
+        return this._idCliente+': '+super.datosCompletos() +' Fecha de registro '+this._fechaRegistro
+    }
+    
+}
 
 let persona1 = new Persona('Javier','Pancha','22');
 let empleado1 = new Empleado('Carlos','Ramirez','21','1800');
 let persona2 = new Persona('Pedro','Rubiano','23');
 let persona3 = new Persona('Daniela','Velandia','22');
 let empleado2 = new Empleado('Paco','Pascal','26','2000');
+let cliente1 = new Cliente('helena','Ramirez','25')
+cliente1.fechaRegistro = '12/7/2023'
 console.log(persona1.toString())
 console.log(empleado1.toString())
 console.log(persona2.toString())
 console.log(empleado2.toString())
 console.log(persona3.toString())
+console.log(cliente1.toString())
