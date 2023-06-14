@@ -39,13 +39,24 @@ class Persona{
         this._edad = edad;
     }
 
+    datosCompletos(){
+        return this._nombre +' '+ this._apellido +' '+ this._edad;
+    }
+
     toString(){
-        return this._idPersona +' '+ this._nombre +' '+ this._apellido +' '+ this._edad
+        return this._idPersona +': '+ this.datosCompletos();
     }
 
 
 }
 
 class Empleado extends Persona{
+    constructor(nombre,apellido,edad,sueldo){
+        super(nombre,apellido,edad)
+
+        this._sueldo = sueldo;
+        this._idEmpleado = Persona.contadorPersonas;
+    }
+    
 
 }
